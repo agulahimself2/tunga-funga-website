@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tunga & Funga | Real Estate Agency & Property Management</title>
+<meta name="description" content="Tunga & Funga Real Estate Agency and Property Management Firm — an introduction to who we are and the services we offer: sales, rentals, and property management.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --indigo-deep:#1a2740;
+    --indigo-mid:#2c4370;
+    --indigo-soft:#3f5a8e;
+    --gold:#c79a2b;
+    --gold-soft:#e2c069;
+    --stone:#f1ecdd;
+    --stone-dark:#e6ded0;
+    --ink:#181d29;
+    --clay:#8a6f47;
+    --white:#fffdf8;
+    --radius-s:2px;
+    --radius-m:6px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--stone);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    margin:0;
+    color:var(--indigo-deep);
+  }
+  .eyebrow{
+    font-family:'Space Mono', monospace;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    font-size:0.72rem;
+    color:var(--clay);
+    display:flex;
+    align-items:center;
+    gap:0.6em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;
+    height:1px;
+    background:var(--gold);
+    display:inline-block;
+  }
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  button{font-family:inherit;cursor:pointer;}
+  :focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 28px;}
+  section{position:relative;}
+
+  /* subtle drafting-paper grid background used behind hero + signature moments */
+  .blueprint-grid{
+    background-image:
+      linear-gradient(var(--indigo-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--indigo-soft) 1px, transparent 1px);
+    background-size:34px 34px;
+    opacity:0.08;
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(241,236,221,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--stone-dark);
+  }
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 28px;max-width:1160px;margin:0 auto;
+  }
+  .stamp{
+    width:46px;height:46px;border-radius:50%;
+    border:2px solid var(--indigo-deep);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces', serif;font-weight:700;font-size:1rem;
+    color:var(--indigo-deep);position:relative;flex-shrink:0;
+  }
+  .stamp::after{
+    content:"";position:absolute;inset:5px;border:1px solid var(--gold);border-radius:50%;
+  }
+  .brand-lockup{display:flex;align-items:center;gap:12px;}
+  .brand-name{font-family:'Fraunces',serif;font-weight:600;font-size:1rem;line-height:1.15;color:var(--indigo-deep);}
+  .brand-name small{display:block;font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.08em;color:var(--clay);text-transform:uppercase;font-weight:400;margin-top:2px;}
+  .nav-links{display:flex;gap:32px;align-items:center;}
+  .nav-links a{font-size:0.88rem;font-weight:500;color:var(--indigo-mid);transition:color .2s;}
+  .nav-links a:hover{color:var(--gold);}
+  .nav-cta{
+    background:var(--indigo-deep);color:var(--white);
+    padding:10px 20px;border-radius:var(--radius-s);
+    font-size:0.85rem;font-weight:600;
+    border:1px solid var(--indigo-deep);
+    transition:background .2s, color .2s;
+  }
+  .nav-cta:hover{background:var(--gold);border-color:var(--gold);color:var(--indigo-deep);}
+  .nav-toggle{display:none;background:none;border:none;padding:8px;}
+  .nav-toggle span{display:block;width:22px;height:2px;background:var(--indigo-deep);margin:5px 0;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    overflow:hidden;
+    padding:88px 0 90px;
+  }
+  .hero .wrap{
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;position:relative;z-index:1;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem, 4.2vw, 3.6rem);
+    line-height:1.06;
+    margin:18px 0 22px;
+  }
+  .hero h1 .accent{color:var(--gold);font-style:italic;font-weight:600;}
+  .hero-sub{
+    font-size:1.05rem;color:var(--indigo-mid);max-width:46ch;margin-bottom:34px;
+  }
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--indigo-deep);color:var(--white);padding:14px 26px;
+    border-radius:var(--radius-s);font-weight:600;font-size:0.92rem;
+    border:1px solid var(--indigo-deep);transition:transform .15s, background .2s;
+    display:inline-block;
+  }
+  .btn-primary:hover{background:var(--gold);border-color:var(--gold);color:var(--indigo-deep);transform:translateY(-1px);}
+  .btn-ghost{
+    padding:14px 26px;border-radius:var(--radius-s);font-weight:600;font-size:0.92rem;
+    border:1px solid var(--indigo-mid);color:var(--indigo-deep);transition:border-color .2s, color .2s;
+    display:inline-block;
+  }
+  .btn-ghost:hover{border-color:var(--gold);color:var(--clay);}
+
+  .blueprint-figure{position:relative;}
+  .blueprint-figure svg{width:100%;height:auto;}
+  .bp-line{
+    fill:none;stroke:var(--indigo-deep);stroke-width:2;
+    stroke-dasharray:1400;stroke-dashoffset:1400;
+    animation:draw 2.6s ease forwards;
+  }
+  .bp-line.gold{stroke:var(--gold);}
+  .bp-dash{stroke-dasharray:6 6;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  @media (prefers-reduced-motion: reduce){
+    .bp-line{animation:none; stroke-dashoffset:0;}
+  }
+
+  /* ---------- TRUST / MARQUEE STRIP ---------- */
+  .strip{
+    background:var(--indigo-deep);color:var(--white);padding:22px 0;
+  }
+  .strip .wrap{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:center;}
+  .strip-item{display:flex;align-items:center;gap:10px;font-family:'Space Mono',monospace;font-size:0.78rem;letter-spacing:0.04em;color:var(--gold-soft);}
+  .strip-item b{color:var(--white);font-family:'Work Sans',sans-serif;font-weight:600;}
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section{padding:96px 0;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);margin-top:14px;}
+  .section-head p{color:var(--indigo-mid);margin-top:14px;font-size:1.02rem;}
+  .alt-bg{background:var(--white);}
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .service-card{
+    border:1px solid var(--stone-dark);background:var(--white);
+    padding:32px 28px;border-radius:var(--radius-m);
+    position:relative;overflow:hidden;transition:border-color .2s, transform .2s;
+  }
+  .service-card:hover{border-color:var(--gold);transform:translateY(-3px);}
+  .service-num{font-family:'Space Mono',monospace;color:var(--gold);font-size:0.8rem;}
+  .service-card h3{font-size:1.25rem;margin:14px 0 10px;}
+  .service-card p{color:var(--indigo-mid);font-size:0.95rem;}
+  .service-icon{width:42px;height:42px;margin-bottom:6px;color:var(--indigo-deep);}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid;grid-template-columns:1.4fr 0.9fr;gap:56px;align-items:start;}
+  .about-copy p{color:var(--indigo-mid);font-size:1rem;margin-bottom:18px;}
+  .about-lead{font-family:'Fraunces',serif;font-size:1.25rem;color:var(--indigo-deep)!important;font-weight:500;line-height:1.45;}
+  .about-facts{display:flex;flex-direction:column;gap:26px;border-left:2px solid var(--stone-dark);padding-left:28px;}
+  .about-fact p{color:var(--indigo-deep);font-size:0.98rem;margin-top:8px;font-weight:500;}
+
+  /* ---------- PROCESS ---------- */
+  .process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative;}
+  .process-grid::before{
+    content:"";position:absolute;top:26px;left:8%;right:8%;height:1px;
+    background:repeating-linear-gradient(90deg, var(--gold) 0 8px, transparent 8px 16px);
+  }
+  .process-step{position:relative;padding:0 20px;}
+  .process-marker{
+    width:52px;height:52px;border-radius:50%;background:var(--white);border:2px solid var(--indigo-deep);
+    display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;
+    color:var(--indigo-deep);margin-bottom:22px;position:relative;z-index:1;
+  }
+  .process-step h3{font-size:1.1rem;margin-bottom:8px;}
+  .process-step p{color:var(--indigo-mid);font-size:0.92rem;}
+
+  /* ---------- TESTIMONIAL ---------- */
+  .testimonial{
+    background:var(--indigo-deep);color:var(--white);border-radius:var(--radius-m);
+    padding:56px 60px;position:relative;overflow:hidden;
+  }
+  .testimonial::before{
+    content:"";position:absolute;inset:0;
+    background-image:linear-gradient(var(--gold) 1px, transparent 1px), linear-gradient(90deg, var(--gold) 1px, transparent 1px);
+    background-size:40px 40px;opacity:0.05;
+  }
+  .testimonial blockquote{
+    font-family:'Fraunces',serif;font-size:1.5rem;line-height:1.4;font-weight:500;
+    max-width:56ch;position:relative;z-index:1;font-style:italic;
+  }
+  .testimonial cite{
+    display:block;margin-top:24px;font-family:'Space Mono',monospace;font-style:normal;
+    font-size:0.8rem;color:var(--gold-soft);position:relative;z-index:1;
+  }
+  .testimonial-flag{
+    display:inline-block;margin-top:20px;font-family:'Space Mono',monospace;font-size:0.68rem;
+    color:rgba(255,253,248,0.55);border:1px solid rgba(255,253,248,0.25);padding:4px 10px;border-radius:2px;position:relative;z-index:1;
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;}
+  .contact-list{display:flex;flex-direction:column;gap:26px;margin-top:32px;}
+  .contact-item{display:flex;gap:16px;align-items:flex-start;}
+  .contact-icon{
+    width:40px;height:40px;border-radius:50%;background:var(--indigo-deep);color:var(--white);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;
+  }
+  .contact-item h4{font-size:0.95rem;margin-bottom:3px;color:var(--indigo-deep);font-family:'Work Sans',sans-serif;font-weight:600;}
+  .contact-item p, .contact-item a{color:var(--indigo-mid);font-size:0.92rem;}
+  .contact-item a:hover{color:var(--gold);}
+
+  form{background:var(--white);border:1px solid var(--stone-dark);border-radius:var(--radius-m);padding:36px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .field{display:flex;flex-direction:column;gap:6px;}
+  .field.full{grid-column:1/-1;}
+  label{font-family:'Space Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--clay);}
+  input, select, textarea{
+    border:1px solid var(--stone-dark);background:var(--stone);border-radius:var(--radius-s);
+    padding:11px 13px;font-family:'Work Sans',sans-serif;font-size:0.92rem;color:var(--ink);
+  }
+  textarea{resize:vertical;min-height:90px;}
+  input:focus, select:focus, textarea:focus{border-color:var(--gold);}
+  .submit-btn{
+    width:100%;background:var(--indigo-deep);color:var(--white);padding:14px;border:none;
+    border-radius:var(--radius-s);font-weight:600;font-size:0.95rem;margin-top:6px;transition:background .2s;
+  }
+  .submit-btn:hover{background:var(--gold);color:var(--indigo-deep);}
+  .form-note{font-size:0.78rem;color:var(--clay);margin-top:12px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--indigo-deep);color:rgba(255,253,248,0.75);padding:56px 0 28px;}
+  .footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:32px;padding-bottom:36px;border-bottom:1px solid rgba(255,253,248,0.12);}
+  .footer-brand{max-width:340px;}
+  .footer-brand .brand-name, .footer-brand .brand-name small{color:var(--white);}
+  .footer-brand p{margin-top:14px;font-size:0.88rem;color:rgba(255,253,248,0.6);}
+  .footer-cols{display:flex;gap:64px;flex-wrap:wrap;}
+  .footer-col h4{font-family:'Space Mono',monospace;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold-soft);margin-bottom:14px;}
+  .footer-col a, .footer-col p{display:block;font-size:0.88rem;color:rgba(255,253,248,0.7);margin-bottom:10px;}
+  .footer-col a:hover{color:var(--gold);}
+  .footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:22px;font-size:0.78rem;color:rgba(255,253,248,0.45);}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .blueprint-figure{order:-1;max-width:340px;margin:0 auto;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .about-facts{border-left:none;padding-left:0;border-top:2px solid var(--stone-dark);padding-top:24px;}
+    .process-grid{grid-template-columns:1fr;gap:36px;}
+    .process-grid::before{display:none;}
+    .contact-grid{grid-template-columns:1fr;}
+    .testimonial{padding:40px 28px;}
+  }
+  @media (max-width:640px){
+    .nav-links{position:fixed;top:74px;left:0;right:0;background:var(--stone);flex-direction:column;
+      padding:24px 28px;border-bottom:1px solid var(--stone-dark);display:none;gap:18px;align-items:flex-start;}
+    .nav-links.open{display:flex;}
+    .nav-toggle{display:block;}
+    .services-grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    .footer-top{flex-direction:column;}
+    .section{padding:64px 0;}
+    .hero{padding:56px 0 64px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand-lockup">
+      <div class="stamp">T&amp;F</div>
+      <div class="brand-name">Tunga &amp; Funga<small>Real Estate &amp; Property Mgmt</small></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#about">About Us</a>
+      <a href="#process">How We Work</a>
+      <a href="#contact" class="nav-cta">Get in Touch</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="blueprint-grid"></div>
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Kano, Nigeria &middot; Est. Placeholder Year</p>
+      <h1>Building the <span class="accent">standard</span> for property in Kano.</h1>
+      <p class="hero-sub">Tunga &amp; Funga is a real estate agency and property management firm handling sales, rentals, and management — brought together under one clear, dependable name.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Talk to Us</a>
+        <a href="#about" class="btn-ghost">About Us</a>
+      </div>
+    </div>
+    <div class="blueprint-figure" aria-hidden="true">
+      <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+        <!-- ground line -->
+        <path class="bp-line gold bp-dash" d="M20 360 H400" style="animation-delay:0s"/>
+        <!-- building outline -->
+        <path class="bp-line" d="M90 360 V150 L210 90 L330 150 V360" style="animation-delay:0.1s"/>
+        <!-- roof ridge -->
+        <path class="bp-line" d="M90 150 H330" style="animation-delay:0.6s"/>
+        <!-- door -->
+        <path class="bp-line" d="M190 360 V290 H240 V360" style="animation-delay:1s"/>
+        <!-- windows -->
+        <path class="bp-line" d="M120 200 H165 V245 H120 Z" style="animation-delay:1.2s"/>
+        <path class="bp-line" d="M255 200 H300 V245 H255 Z" style="animation-delay:1.3s"/>
+        <!-- measurement marks -->
+        <path class="bp-line gold bp-dash" d="M60 150 V360" style="animation-delay:1.6s"/>
+        <path class="bp-line gold" d="M55 150 H65 M55 360 H65" style="animation-delay:1.8s"/>
+        <!-- compass/seal mark -->
+        <circle class="bp-line gold" cx="355" cy="80" r="28" style="animation-delay:2s"/>
+        <path class="bp-line gold" d="M355 58 V102 M333 80 H377" style="animation-delay:2.1s"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div class="strip-item"><b>Sales</b> &middot; Residential &amp; commercial</div>
+    <div class="strip-item"><b>Rentals</b> &middot; Tenant placement &amp; leasing</div>
+    <div class="strip-item"><b>Management</b> &middot; Full property oversight</div>
+  </div>
+</div>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What We Do</p>
+      <h2>Three services, one point of contact.</h2>
+      <p>Whether you're buying, renting, or handing over a property to be managed, Tunga &amp; Funga gives you a single, dependable team to work with from start to finish.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-num">01</span>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+        <h3>Property Sales</h3>
+        <p>Buying or selling land, residential, or commercial property — we handle valuation, marketing, negotiation, and closing.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">02</span>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-7h6v7"/><path d="M4 21h16"/></svg>
+        <h3>Rentals &amp; Leasing</h3>
+        <p>We match tenants to available properties, handle viewings, and prepare leases so landlords aren't left chasing paperwork.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num">03</span>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 10h16M10 4v16"/></svg>
+        <h3>Property Management</h3>
+        <p>Rent collection, maintenance coordination, and tenant relations — so owners get the returns without the day-to-day demands.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt-bg" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">About Us</p>
+      <h2>Who we are.</h2>
+      <p>Tunga &amp; Funga Real Estate Agency and Property Management Firm handles property sales, rentals, and management across Kano. This is a short placeholder story — replace it with your own once you're ready to lock in the details.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p class="about-lead">We started Tunga &amp; Funga to bring one consistent name to the buying, renting, and managing of property in Kano — handled the way it's always been done locally, but with a clearer front door for clients.</p>
+        <p>[Placeholder: add a paragraph here on how the company started, who founded it, and what problem it was built to solve.]</p>
+        <p>[Placeholder: add a paragraph on the values or approach that guide how you work with clients — e.g. trust, transparency, responsiveness.]</p>
+      </div>
+      <div class="about-facts">
+        <div class="about-fact">
+          <span class="eyebrow">Based In</span>
+          <p>Kano, Nigeria</p>
+        </div>
+        <div class="about-fact">
+          <span class="eyebrow">What We Do</span>
+          <p>Property sales, rentals &amp; leasing, and property management</p>
+        </div>
+        <div class="about-fact">
+          <span class="eyebrow">Who We Serve</span>
+          <p>[Placeholder: buyers, tenants, landlords, investors — whoever your typical client is]</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How We Work</p>
+      <h2>A simple process, every time.</h2>
+      <p>No matter which service you need, the path from first call to keys-in-hand follows the same three steps.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-marker">1</div>
+        <h3>Tell us what you need</h3>
+        <p>Call, WhatsApp, or fill out the form — a buyer, tenant, or landlord, we start with a short conversation.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-marker">2</div>
+        <h3>We match &amp; verify</h3>
+        <p>We shortlist properties or tenants, confirm documentation, and arrange viewings or inspections.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-marker">3</div>
+        <h3>We close it out</h3>
+        <p>Paperwork, handover, and — where needed — ongoing management, so the relationship doesn't end at signing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt-bg">
+  <div class="wrap">
+    <div class="testimonial">
+      <blockquote>"Tunga & Funga found us a tenant within two weeks and have managed the property without a single missed rent collection since."</blockquote>
+      <cite>— Placeholder client testimonial</cite>
+      <br>
+      <span class="testimonial-flag">Sample quote — replace with a real client testimonial</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Get In Touch</p>
+      <h2>Let's talk about your property.</h2>
+      <p>Reach us however is easiest — phone, WhatsApp, email, or the form below.</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-list">
+          <div class="contact-item">
+            <div class="contact-icon">☎</div>
+            <div><h4>Phone</h4><a href="tel:+2348000000000">+234 800 000 0000</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🟢</div>
+            <div><h4>WhatsApp</h4><a href="https://wa.me/2348000000000" target="_blank" rel="noopener">Chat with us on WhatsApp</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉</div>
+            <div><h4>Email</h4><a href="mailto:info@tungafunga.example">info@tungafunga.example</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div><h4>Office</h4><p>Placeholder Street, Nasarawa GRA, Kano, Nigeria</p></div>
+          </div>
+        </div>
+      </div>
+      <form id="contactForm">
+        <div class="form-row">
+          <div class="field"><label for="name">Full Name</label><input id="name" name="name" type="text" required></div>
+          <div class="field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field full"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field full">
+            <label for="interest">I'm Interested In</label>
+            <select id="interest" name="interest">
+              <option>Buying a property</option>
+              <option>Renting a property</option>
+              <option>Listing a property for sale</option>
+              <option>Property management services</option>
+              <option>Something else</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field full"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+        <p class="form-note">This form currently opens your email client to send the message. Connect it to a form service (e.g. Formspree) for direct inbox delivery.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand-name">Tunga &amp; Funga<small>Real Estate &amp; Property Mgmt</small></div>
+        <p>A real estate agency and property management firm serving Kano and beyond — sales, rentals, and management, under one name.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Site</h4>
+          <a href="#services">Services</a>
+          <a href="#about">About Us</a>
+          <a href="#process">How We Work</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>+234 800 000 0000</p>
+          <p>info@tungafunga.example</p>
+          <p>Kano, Nigeria</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Tunga &amp; Funga Real Estate Agency and Property Management Firm.</span>
+      <span>Placeholder details — update logo, colors, and contact info before launch.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const subject = encodeURIComponent(`Website Inquiry from ${data.get('name')}`);
+    const body = encodeURIComponent(
+      `Name: ${data.get('name')}\nPhone: ${data.get('phone')}\nEmail: ${data.get('email')}\nInterested in: ${data.get('interest')}\n\nMessage:\n${data.get('message')}`
+    );
+    window.location.href = `mailto:info@tungafunga.example?subject=${subject}&body=${body}`;
+  });
+</script>
+
+</body>
+</html>
