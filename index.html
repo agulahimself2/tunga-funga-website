@@ -3,11 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tunga & Funga | Real Estate Agency & Property Management</title>
-<meta name="description" content="Tunga & Funga Real Estate Agency and Property Management Firm — an introduction to who we are and the services we offer: sales, rentals, and property management.">
+<title>Tunga & Funga Real Estate Agency &amp; Property Management | Kano, Nigeria</title>
+<meta name="description" content="Tunga &amp; Funga is a real estate agency and property management firm in Kano, Nigeria, handling property sales, rentals, leasing, and full property management since 2020.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.tungaandfunga.netlify.app/">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tunga & Funga Real Estate Agency & Property Management">
+<meta property="og:title" content="Tunga & Funga Real Estate Agency & Property Management | Kano, Nigeria">
+<meta property="og:description" content="Property sales, rentals, and property management in Kano and across Nigeria — one trusted team from search to handover.">
+<meta property="og:url" content="https://www.tungaandfunga.netlify.app/">
+<meta property="og:locale" content="en_NG">
+<meta name="twitter:card" content="summary">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Structured data: tells Google / AI search engines exactly what this business is, where it is, and how to reach it -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Tunga & Funga Real Estate Agency & Property Management Limited",
+  "description": "Real estate agency and property management firm in Kano, Nigeria, handling property sales, rentals, leasing, and full property management.",
+  "url": "https://www.tungaandfunga.netlify.app/",
+  "telephone": ["+2348069333164", "+2348051121956", "+2348104129218"],
+  "email": "audusaddam89@gmail.com",
+  "foundingDate": "2020",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "No 343 Agalawa Gidan Dan Adala, Panisau",
+    "addressLocality": "Ungogo",
+    "addressRegion": "Kano State",
+    "addressCountry": "NG"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Kano State, Nigeria"
+  },
+  "sameAs": []
+}
+</script>
+
 <style>
   :root{
     --indigo-deep:#1a2740;
@@ -66,7 +105,6 @@
   .wrap{max-width:1160px;margin:0 auto;padding:0 28px;}
   section{position:relative;}
 
-  /* subtle drafting-paper grid background used behind hero + signature moments */
   .blueprint-grid{
     background-image:
       linear-gradient(var(--indigo-soft) 1px, transparent 1px),
@@ -212,29 +250,6 @@
   .process-step h3{font-size:1.1rem;margin-bottom:8px;}
   .process-step p{color:var(--indigo-mid);font-size:0.92rem;}
 
-  /* ---------- TESTIMONIAL ---------- */
-  .testimonial{
-    background:var(--indigo-deep);color:var(--white);border-radius:var(--radius-m);
-    padding:56px 60px;position:relative;overflow:hidden;
-  }
-  .testimonial::before{
-    content:"";position:absolute;inset:0;
-    background-image:linear-gradient(var(--gold) 1px, transparent 1px), linear-gradient(90deg, var(--gold) 1px, transparent 1px);
-    background-size:40px 40px;opacity:0.05;
-  }
-  .testimonial blockquote{
-    font-family:'Fraunces',serif;font-size:1.5rem;line-height:1.4;font-weight:500;
-    max-width:56ch;position:relative;z-index:1;font-style:italic;
-  }
-  .testimonial cite{
-    display:block;margin-top:24px;font-family:'Space Mono',monospace;font-style:normal;
-    font-size:0.8rem;color:var(--gold-soft);position:relative;z-index:1;
-  }
-  .testimonial-flag{
-    display:inline-block;margin-top:20px;font-family:'Space Mono',monospace;font-size:0.68rem;
-    color:rgba(255,253,248,0.55);border:1px solid rgba(255,253,248,0.25);padding:4px 10px;border-radius:2px;position:relative;z-index:1;
-  }
-
   /* ---------- CONTACT ---------- */
   .contact-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;}
   .contact-list{display:flex;flex-direction:column;gap:26px;margin-top:32px;}
@@ -322,13 +337,15 @@
   </nav>
 </header>
 
+<main>
+
 <section class="hero">
   <div class="blueprint-grid"></div>
   <div class="wrap">
     <div>
-      <p class="eyebrow">Kano, Nigeria &middot; Est. 2020>
+      <p class="eyebrow">Kano, Nigeria &middot; Est. 2020</p>
       <h1>Building the <span class="accent">standard</span> for property from Kano and beyond</h1>
-      <p class="hero-sub">Tunga &amp; Funga is a real estate agency and property management firm handling sales, rentals, and management of all kinds of property - brought together under one clear, dependable name.</p>
+      <p class="hero-sub">Tunga &amp; Funga is a real estate agency and property management firm handling sales, rentals, and management of all kinds of property — brought together under one clear, dependable name.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Talk to Us</a>
         <a href="#about" class="btn-ghost">About Us</a>
@@ -336,21 +353,14 @@
     </div>
     <div class="blueprint-figure" aria-hidden="true">
       <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
-        <!-- ground line -->
         <path class="bp-line gold bp-dash" d="M20 360 H400" style="animation-delay:0s"/>
-        <!-- building outline -->
         <path class="bp-line" d="M90 360 V150 L210 90 L330 150 V360" style="animation-delay:0.1s"/>
-        <!-- roof ridge -->
         <path class="bp-line" d="M90 150 H330" style="animation-delay:0.6s"/>
-        <!-- door -->
         <path class="bp-line" d="M190 360 V290 H240 V360" style="animation-delay:1s"/>
-        <!-- windows -->
         <path class="bp-line" d="M120 200 H165 V245 H120 Z" style="animation-delay:1.2s"/>
         <path class="bp-line" d="M255 200 H300 V245 H255 Z" style="animation-delay:1.3s"/>
-        <!-- measurement marks -->
         <path class="bp-line gold bp-dash" d="M60 150 V360" style="animation-delay:1.6s"/>
         <path class="bp-line gold" d="M55 150 H65 M55 360 H65" style="animation-delay:1.8s"/>
-        <!-- compass/seal mark -->
         <circle class="bp-line gold" cx="355" cy="80" r="28" style="animation-delay:2s"/>
         <path class="bp-line gold" d="M355 58 V102 M333 80 H377" style="animation-delay:2.1s"/>
       </svg>
@@ -401,18 +411,18 @@
     <div class="section-head">
       <p class="eyebrow">About Us</p>
       <h2>Who we are.</h2>
-      <p>Tunga &amp; Funga Real Estate Agency and Property Management Firm handles property sales, rentals, and management across Kano and Nigeria. </p>
+      <p>Tunga &amp; Funga Real Estate Agency and Property Management Firm handles property sales, rentals, and management across Kano and Nigeria.</p>
     </div>
     <div class="about-grid">
       <div class="about-copy">
-        <p class="about-lead">We started Tunga &amp; Funga to bring one consistent name to the buying, renting, and managing of property in Kano and accross Nigeria — handled the way it's always been done locally, but with a clearer front door for clients.</p>
-        <p>The company began operation in 2020, with the sole purpose to ensure transparent and verified real estate transactions in the Jaba - Panisau and Ungogo axis in Kano state, Nigeria. In 5 years, the company has served clients accross Nigeria and help process over 1000 transactions with satisfied clients from all over the country.</p>
-        <p>Every real estate deal we hanlde follows a rigourous vetting and verification process as we value integrity of deals, trust of clients and the satisfaion that come with helping our clients achieve their real estate goals. We are here to guide and help you avoid traps and bad eals when investing in real estate.</p>
+        <p class="about-lead">We started Tunga &amp; Funga to bring one consistent name to the buying, renting, and managing of property in Kano and across Nigeria — handled the way it's always been done locally, but with a clearer front door for clients.</p>
+        <p>The company began operation in 2020, with the sole purpose of ensuring transparent and verified real estate transactions in the Jaba–Panisau and Ungogo axis of Kano State, Nigeria. In 5 years, the company has served clients across Nigeria and processed over 1,000 transactions for satisfied clients from all over the country.</p>
+        <p>Every real estate deal we handle follows a rigorous vetting and verification process, because we value the integrity of the deal, the trust of the client, and the satisfaction that comes with helping our clients reach their real estate goals. We're here to guide you and help you avoid traps and bad deals when investing in real estate.</p>
       </div>
       <div class="about-facts">
         <div class="about-fact">
-          <span class="eyebrow"> Our Office is located at<span>
-          <p>NO 343 Agalawa Gidan Dan Adala, Panisau, Ungogo, Kano, Nigeria</p>
+          <span class="eyebrow">Our Office</span>
+          <p>No 343 Agalawa Gidan Dan Adala, Panisau, Ungogo, Kano, Nigeria</p>
         </div>
         <div class="about-fact">
           <span class="eyebrow">What We Do</span>
@@ -420,7 +430,7 @@
         </div>
         <div class="about-fact">
           <span class="eyebrow">Who We Serve</span>
-          <p> First time buyers, people looking for long term investments that mature in 2 to 5 years, and people looking for investment opportunities in developing areas</p>
+          <p>First-time buyers, people looking for long-term investments that mature in 2–5 years, and people looking for opportunities in developing areas</p>
         </div>
       </div>
     </div>
@@ -431,14 +441,14 @@
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">How We Work</p>
-      <h2>A simple 4-step process, every time.</h2>
-      <p> A scheduled discovery call to understand your preferences, onsite inspection of shortlisted properties, payment and handover of relevant documents.</p>
+      <h2>A simple 3-step process, every time.</h2>
+      <p>A scheduled discovery call to understand your preferences, onsite inspection of shortlisted properties, then payment and handover of relevant documents.</p>
     </div>
     <div class="process-grid">
       <div class="process-step">
         <div class="process-marker">1</div>
         <h3>Tell us what you need</h3>
-        <p>Call, WhatsApp, or fill out the form — a buyer, tenant, or landlord, we start with a short conversation.</p>
+        <p>Call, WhatsApp, or fill out the form — whether you're a buyer, tenant, or landlord, we start with a short conversation.</p>
       </div>
       <div class="process-step">
         <div class="process-marker">2</div>
@@ -454,7 +464,6 @@
   </div>
 </section>
 
-
 <section class="section" id="contact">
   <div class="wrap">
     <div class="section-head">
@@ -466,20 +475,25 @@
       <div>
         <div class="contact-list">
           <div class="contact-item">
-            <div class="contact-icon">☎</div>
-            <div><h4>Phone</h4><a href="tel:+2348104129218">+2348069333164 or +2348051121956 or +2348104129218</a></div>
+            <div class="contact-icon" aria-hidden="true">&#9742;</div>
+            <div>
+              <h4>Phone</h4>
+              <a href="tel:+2348069333164">+234 806 933 3164</a><br>
+              <a href="tel:+2348051121956">+234 805 112 1956</a><br>
+              <a href="tel:+2348104129218">+234 810 412 9218</a>
+            </div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">🟢</div>
+            <div class="contact-icon" aria-hidden="true">&#9679;</div>
             <div><h4>WhatsApp</h4><a href="https://wa.me/2348104129218" target="_blank" rel="noopener">Chat with us on WhatsApp</a></div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">✉</div>
-            <div><h4>Email</h4><a href="mailto:audusaddam89@gmail.com">audusaddam@gmail.com/a></div>
+            <div class="contact-icon" aria-hidden="true">&#9993;</div>
+            <div><h4>Email</h4><a href="mailto:audusaddam89@gmail.com">audusaddam89@gmail.com</a></div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">📍</div>
-            <div><h4>Office</h4><p>No 343 Agalawa Gidan Dan Adala Panisau, Ungogo, Kano, Nigeria</p></div>
+            <div class="contact-icon" aria-hidden="true">&#128205;</div>
+            <div><h4>Office</h4><p>No 343 Agalawa Gidan Dan Adala, Panisau, Ungogo, Kano, Nigeria</p></div>
           </div>
         </div>
       </div>
@@ -506,11 +520,13 @@
           <div class="field full"><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
         </div>
         <button type="submit" class="submit-btn">Send Message</button>
-        <p class="form-note"></p>
+        <p class="form-note">This opens your email app with the details filled in — nothing is sent automatically.</p>
       </form>
     </div>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="wrap">
@@ -529,15 +545,15 @@
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
-          <p>+2348069333164 or +2348051121956 or +2348104129218<p>
-          <p>audusaddam89@gmail.com<p>
-          <p>No 343 Agalawa Gidan Dan Adala Panisau, Ungogo, Kano, Nigeria</p>
+          <p>+234 806 933 3164 &middot; +234 805 112 1956 &middot; +234 810 412 9218</p>
+          <p>audusaddam89@gmail.com</p>
+          <p>No 343 Agalawa Gidan Dan Adala, Panisau, Ungogo, Kano, Nigeria</p>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Tunga &amp; Funga Real Estate Agency and Property Management Firm.</span>
-      <span></span>
+      <span>&copy; 2026 Tunga &amp; Funga Real Estate Agency and Property Management Firm.</span>
+      <span>All rights reserved.</span>
     </div>
   </div>
 </footer>
@@ -559,7 +575,7 @@
     const body = encodeURIComponent(
       `Name: ${data.get('name')}\nPhone: ${data.get('phone')}\nEmail: ${data.get('email')}\nInterested in: ${data.get('interest')}\n\nMessage:\n${data.get('message')}`
     );
-    window.location.href = `mailto:info@tungafunga.example?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:audusaddam89@gmail.com?subject=${subject}&body=${body}`;
   });
 </script>
 
